@@ -7,5 +7,4 @@ const map = function(array, callback) {
   return results;
 }
 
-console.log(map(words, word => word[0]))
 module.exports = map;
