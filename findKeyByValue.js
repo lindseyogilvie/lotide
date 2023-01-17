@@ -1,11 +1,5 @@
 // Function evaluates two elements for equality and logs a Pass/Fail Assertion
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 // Function takes an object and a value, returns the first key which contains the given value
 const findKeyByValue = function (object, value) {
@@ -35,7 +29,8 @@ const bestSongOnTaylorSwiftAlbums = {
   lover: "Cornerlia Street",
   folklore: "My Tears Richochet",
   evermore: "Gold Rush",
-  midnights: "Maroon"
+  midnights: "Maroon",
+  
 };
 
 assertEqual(findKeyByValue(bestSongOnTaylorSwiftAlbums, "Gold Rush"), "evermore"); // => Assertion Passed

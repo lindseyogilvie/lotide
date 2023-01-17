@@ -1,11 +1,5 @@
 // Function evaluates two elements for equality and logs corresponding Pass/Fail Assertion
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 // Create a function that is given an array and an object and will return an object contianing counts of everything that the input object listed
 const countOnly = function (allItems, itemsToCount) {

@@ -1,11 +1,5 @@
 // Function evaluates two arguments for equality
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 // Function iterates through keys in an object and returns key with the desired value
 const findKey = function(object, callback) {
@@ -49,4 +43,5 @@ const test3 = findKey({
   oranges: 1,
   carrots: 3
 }, x => x === 13) // => "undefined"
+
 assertEqual(test3, undefined); // => Assertion Passed
