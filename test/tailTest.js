@@ -1,21 +1,19 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-// TEST CODE
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
-
-// Test Case: Check the original array
-const words1 = ["Yo Yo", "Lighthouse", "Labs"];
-console.log(tail(words1)); // => ["Lighthouse", "Labs"]
-assertEqual(words1.length, 3);
-
-// Test Case: Single element array
-const words2 = ["Labs"];
-console.log(tail(words2)); // => []
-
-// Test Case: Empty array
-const words3 = [];
-console.log(tail(words3)); // => []
+describe("#tail", () => {
+  it("returns 2, 3, 4, 5 for [1, 2, 3, 4, 5]", () => {
+    console.log(tail([1, 2, 3, 4, 5]))
+    assert.deepEqual(tail([1, 2, 3, 4, 5]), [2, 3, 4, 5])
+  });
+  it("returns 'Lighthouse' 'Labs' for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(['Hello', 'Lighthouse', 'Labs']), ['Lighthouse', 'Labs'])
+  });
+  it("returns an empty array when passed an array with a single element", () => {
+    console.log(tail[1]);
+    assert.deepEqual(tail([1]), []);
+  });
+  it("returns an empty array when passed an empty array", () => {
+    assert.deepEqual(tail([]), []);
+  });
+});
